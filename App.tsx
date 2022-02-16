@@ -22,7 +22,7 @@ import * as Permissions from 'expo-permissions';
 
 
 export default function App() {
-    let url = 'https://www.flickr.com/services/rest/?method=flickr.favorites.getPublicList&api_key=bd384ae62a091d2f3c1c6c756b9dff0d&user_id=195012414%40N07&extras=views%2C+media%2C+path_alias%2C+url_sq%2C+url_t%2C+url_s%2C+url_q%2C+url_m%2C+url_n%2C+url_z%2C+url_c%2C+url_l%2C+url_o&format=json&nojsoncallback=1'
+    let url = 'https://www.flickr.com/services/rest/?method=flickr.favorites.getPublicList&api_key=5f30f8877a137f7cb500122bc7c7a89e&user_id=195012414%40N07&extras=views%2C+media%2C+path_alias%2C+url_sq%2C+url_t%2C+url_s%2C+url_q%2C+url_m%2C+url_n%2C+url_z%2C+url_c%2C+url_l%2C+url_o&format=json&nojsoncallback=1'
 
     const [data, setData] = useState();
 
@@ -118,7 +118,7 @@ export default function App() {
                             FileSystem.downloadAsync(uri, fileUri)
                                 .then(({uri}) => {
                                     saveFile(uri);
-                                }).then(()=> Alert.alert("Download successfully!", " Btw, expo-permission has been deprecated!"))
+                                }).then(() => Alert.alert("Download successfully!", " Btw, expo-permission has been deprecated!"))
                                 .catch(error => {
                                     console.error(error);
                                     Alert.alert("Error", "You already have this image!")
@@ -143,7 +143,7 @@ export default function App() {
             <StatusBar barStyle="light-content"/>
             <Text>Developed by DieuNN PH15766</Text>
             <Text>https://github.com/DieuNN/</Text>
-            <Text style={{textAlign:'center'}}>My Flickr account has been deleted after signed for an API key :(</Text>
+            <Text style={{textAlign: 'center'}}>My Flickr account has been deleted after signed for an API key :(</Text>
 
         </SafeAreaView>
     )
@@ -153,8 +153,8 @@ export default function App() {
     return (
         <NavigationContainer>
             <Stack.Navigator initialRouteName={'HomeScreen'} screenOptions={({route, navigation}) => ({
-                headerRight: ()=> (
-                    <TouchableOpacity onPress={()=> navigation.navigate('AboutMeScreen')}>
+                headerRight: () => (
+                    <TouchableOpacity onPress={() => navigation.navigate('AboutMeScreen')}>
                         <Icon name={'bars'}/>
                     </TouchableOpacity>
                 )
@@ -167,7 +167,6 @@ export default function App() {
         </NavigationContainer>
     )
 }
-
 
 
 const styles = StyleSheet.create({
